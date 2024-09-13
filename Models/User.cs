@@ -1,17 +1,40 @@
-﻿namespace DotNetHW2;
+﻿using System.Collections;
 
-public class User
+namespace DotNetHW2;
+
+public abstract class User
 {
-    public string Username { get; set; }
-    public string Password { get; set; }
-    public int Id { get; set; }
-    public double Money { get; set; }
+    public required string Username { get; set; }
+    public required string Password { get; set; }
+}
 
-    public User(string username, string password, int id, double money)
+public class Admin : User
+{
+    private static Admin MyAdmin { get; } = new("admin", "admin")
+    {
+        Username = "Masih",
+        Password = "123456"
+    };
+
+    private Admin(string username, string password)
     {
         Username = username;
         Password = password;
-        Id = id;
+    }
+
+    public static Admin GetAdmin()
+    {
+        return MyAdmin;
+    }
+}
+
+public class NonAdmin : User
+{
+    public double Money { get; set; }
+    public NonAdmin(string username, string password, double money)
+    {
+        Username = username;
+        Password = password;
         Money = money;
     }
 }
