@@ -4,7 +4,7 @@ namespace Service;
 
 public class ItemService : IItemService
 {
-    public required User User { get; set; }
+    public static User User { get; set; }
 
     public void Add(Item item)
     {
@@ -16,7 +16,6 @@ public class ItemService : IItemService
         if (User is not Admin) return false;
         Item.Items.Remove(item);
         return true;
-
     }
 
     public bool Purchase(Item item)

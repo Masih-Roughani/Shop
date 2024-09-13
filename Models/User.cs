@@ -6,6 +6,7 @@ public abstract class User
 {
     public required string Username { get; set; }
     public required string Password { get; set; }
+    public static List<User> AllUsers { get; } = new List<User>();
 }
 
 public class Admin : User
@@ -31,6 +32,7 @@ public class Admin : User
 public class NonAdmin : User
 {
     public double Money { get; set; }
+
     public NonAdmin(string username, string password, double money)
     {
         Username = username;
