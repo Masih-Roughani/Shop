@@ -1,3 +1,4 @@
+using DotNetHW2;
 using Service;
 using Xunit.Sdk;
 
@@ -13,8 +14,86 @@ public class ItemServiceTest
     }
 
     [Fact]
-    public void SampleTest()
+    public void Test_AddItem_Success()
     {
-        // write test for _sut functions !
+        // Arrange
+        bool expected = true;
+        
+        // Act
+        ItemService.User = Admin.GetAdmin();
+        bool actual = _sut.Add(new GroceryItem("Grocery Item", 50, 10));
+        
+        // Assert
+        Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void Test_AddItem_Fail()
+    {
+        // Arrange
+        bool expected = false;
+        
+        // Act
+        ItemService.User = new NonAdmin("username", "password",100);
+        bool actual = _sut.Add(new GroceryItem("Grocery Item", 50, 10));
+        
+        // Assert
+        Assert.Equal(expected, actual);
+    }
+    
+    [Fact]
+    public void Test_DeleteItem_Success()
+    {
+        // Arrange
+        bool expected = true;
+        
+        // Act
+        ItemService.User = Admin.GetAdmin();
+        bool actual = _sut.Add(new GroceryItem("Grocery Item", 50, 10));
+        
+        // Assert
+        Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void Test_DeleteItem_Fail()
+    {
+        // Arrange
+        bool expected = false;
+        
+        // Act
+        ItemService.User = new NonAdmin("username", "password",100);
+        bool actual = _sut.Add(new GroceryItem("Grocery Item", 50, 10));
+        
+        // Assert
+        Assert.Equal(expected, actual);
+    }
+    
+    [Fact]
+    public void Test_PurchaseItem_Success()
+    {
+        // Arrange
+        bool expected = false;
+        
+        // Act
+        ItemService.User = Admin.GetAdmin();
+        bool actual = _sut.Add(new GroceryItem("Grocery Item", 50, 10));
+        
+        // Assert
+        Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void Test_PurchaseItem_Fail()
+    {
+        // Arrange
+        bool expected = true;
+        
+        // Act
+        ItemService.User = new NonAdmin("username", "password",100);
+        bool actual = _sut.Add(new GroceryItem("Grocery Item", 50, 10));
+        
+        // Assert
+        Assert.Equal(expected, actual);
     }
 }

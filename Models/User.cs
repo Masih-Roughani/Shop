@@ -4,18 +4,14 @@ namespace DotNetHW2;
 
 public abstract class User
 {
-    public required string Username { get; set; }
-    public required string Password { get; set; }
+    public string? Username { get; set; }
+    public string? Password { get; set; }
     public static List<User> AllUsers { get; } = new List<User>();
 }
 
 public class Admin : User
 {
-    private static Admin MyAdmin { get; } = new("admin", "admin")
-    {
-        Username = "Masih",
-        Password = "123456"
-    };
+    private static Admin MyAdmin { get; } = new("admin", "admin");
 
     private Admin(string username, string password)
     {

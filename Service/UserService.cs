@@ -21,12 +21,12 @@ public class UserService
         };
     }
 
-    public void ChangeInfo(string name, string password, string newname, string newpassword)
+    public void ChangeInfo(string name, string password, string newName, string newPassword)
     {
         foreach (var user in User.AllUsers.Where(user => user.Username == name && user.Password == password))
         {
-            user.Username = newname;
-            user.Password = newpassword;
+            user.Username = newName;
+            user.Password = newPassword;
         }
     }
 }

@@ -6,9 +6,11 @@ public class ItemService : IItemService
 {
     public static User User { get; set; }
 
-    public void Add(Item item)
+    public bool Add(Item item)
     {
+        if (User is not Admin) return false;
         Item.Items.Add(item);
+        return true;
     }
 
     public bool Delete(Item item)
