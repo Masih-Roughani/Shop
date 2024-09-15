@@ -4,29 +4,31 @@ namespace Service;
 
 public class UserService
 {
-    public void Login(string name, string password)
+    public bool Login(string name, string password)
     {
         foreach (var user in User.AllUsers.Where(user => user.Username == name && user.Password == password))
         {
             ItemService.User = user;
+            return true;
         }
+
+        return false;
     }
 
     public void Register(string name, string password, double money)
     {
-        var nonAdmin = new NonAdmin(name, password, money)
-        {
-            Username = name ,
-            Password = password
-        };
+        var nonAdmin = new NonAdmin(name, password, money);
     }
 
-    public void ChangeInfo(string name, string password, string newName, string newPassword)
+    public bool ChangeInfo(string name, string password, string newName, string newPassword)
     {
         foreach (var user in User.AllUsers.Where(user => user.Username == name && user.Password == password))
         {
             user.Username = newName;
             user.Password = newPassword;
+            return true;
         }
+
+        return false;
     }
 }

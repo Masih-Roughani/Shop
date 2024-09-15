@@ -22,9 +22,8 @@ public class ItemService : IItemService
 
     public bool Purchase(Item item)
     {
-        if (User is not NonAdmin admin || !(admin.Money >= item.Price)) return false;
-        admin.Money -= item.Price;
+        if (User is not NonAdmin nonAdmin || !(nonAdmin.Money >= item.Price)) return false;
+        nonAdmin.Money -= item.Price;
         return true;
-
     }
 }
