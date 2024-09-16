@@ -1,6 +1,6 @@
-namespace DotNetHW2;
+namespace DotNetHW2.Users;
 
-public class Admin : User
+public sealed class Admin : User
 {
     private static Admin MyAdmin { get; } = new("admin", "admin");
 

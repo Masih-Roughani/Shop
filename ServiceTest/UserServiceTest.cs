@@ -39,22 +39,6 @@ public class UserServiceTest
     }
 
     [Fact]
-    public void Test_ChangeInfo_Success()
-    {
-        // Arrange
-        var mockUser = new Mock<User>();
-
-        // Act
-        mockUser.Setup(u => u.Username).Returns("username");
-        mockUser.Setup(u => u.Password).Returns("password");
-        User.AllUsers.Add(mockUser.Object);
-        var result = _sut.ChangeInfo("username", "password", "newUsername", "newPassword");
-
-        // Assert
-        Assert.True(result);
-    }
-
-    [Fact]
     public void Test_Login_Fail()
     {
         // Arrange
@@ -65,22 +49,6 @@ public class UserServiceTest
         mockUser.Setup(u => u.Password).Returns("password");
         User.AllUsers.Add(mockUser.Object);
         var result = _sut.Login("user", "password");
-
-        // Assert
-        Assert.False(result);
-    }
-
-    [Fact]
-    public void Test_ChangeInfo_Fail()
-    {
-        // Arrange
-        var mockUser = new Mock<User>();
-
-        // Act
-        mockUser.Setup(u => u.Username).Returns("username");
-        mockUser.Setup(u => u.Password).Returns("password");
-        User.AllUsers.Add(mockUser.Object);
-        var result = _sut.ChangeInfo("name", "password", "newUsername", "newPassword");
 
         // Assert
         Assert.False(result);

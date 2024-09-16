@@ -1,10 +1,8 @@
-﻿using DotNetHW2;
-
-namespace Service;
+﻿namespace Service;
 
 public interface IItemService
 {
-    bool Add(Item item);
-    bool Delete(Item item);
-    bool Purchase(Item item);
+    bool Add(string name, double price, int quantity, string itemType);
+    bool Delete(string name);
+    bool Purchase(string name);
 }

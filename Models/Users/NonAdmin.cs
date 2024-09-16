@@ -1,6 +1,6 @@
-namespace DotNetHW2;
+namespace DotNetHW2.Users;
 
-public class NonAdmin : User
+public sealed class NonAdmin : User
 {
     public double Money { get; set; }
 

@@ -1,6 +1,6 @@
-namespace DotNetHW2;
+namespace DotNetHW2.Items;
 
-public class ElectronicsItem : Item
+public sealed class ElectronicsItem : Item
 {
     public ElectronicsItem(string name, double price, int quantity)
     {
