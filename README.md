@@ -1,22 +1,22 @@
-# MarketSample
+# ShopSample
+Welcome to the Shop Console Project, a C# console application that demonstrates object-oriented programming concepts using abstract classes and unit testing with xUnit.
 
- <div dir="rtl" align='right'>
+Overview :
+This project consists of two abstract classes, Item and User, each with two subclasses. The Item class has subclasses Electronic and Grocery, while the User class has subclasses NonAdmin and Admin. The project also includes two test classes, one for Item methods and one for User tests, which contain xUnit tests using Mock Class.
 
-در این تمرین می‌خواهیم یک فروشگاه را شبیه‌سازی کنیم.
+Project Structure<br>
+Item.cs: Abstract class representing an item in the shop.<br>
+ElectronicsItem.cs: Subclass of Item representing a product.<br>
+GroceryItem.cs: Subclass of Item representing a product.<br>
+User.cs: Abstract class representing a user.<br>
+NonAdmin.cs: Subclass of User representing a customer.<br>
+Admin.cs: Subclass of User representing an administrator.<br>
+ItemService.cs: Methods of Item class and its subclasses.<br>
+UserService.cs: Methods of User class and its subclasses.<br>
+ItemTests.cs: xUnit test class for ItemService class.<br>
+UserTests.cs: xUnit test class for UserService class.<br><br>
+Getting Started<br>
+To run the project, simply open the solution and run the project. The console application will start, and you can interact with it using the provided menus.<br>
 
-ساختار پروژه به صورت تمپلیت ساخته شده و شما باید کد آن را تکمیل کنید.
-
-در این پروژه ما دو موجودیت اصلی کاربر(User) و کالا(Item) داریم. ابتدا به دلخواه ویژگی‌های اصلی و منطقی برای آن‌ها در پروژه Model تعریف کنید. همچنین دو نوع کالای خاص به عنوان فرزند کلاس کالا به دلخواه بسازید.
-
-سپس عملیات مربوط به آن‌ها را در پروژه Service بنویسید. 
-
-+ عملیات مربوط به کاربر شامل تغییر اطلاعات، ثبت‌نام و ورود است.
-+ عملیات مربوط به کالا نیز شامل اضافه کردن، حذف کردن برای کاربر ادمین و خرید کالا برای کاربر عادی است.
-
-همچنین شما برای همه این عملیات باید در پروژه ServiceTest تست بنویسید.
-
-در نهایت برای تعامل با کاربر یک اپ تحت کنسول ساده به‌صورت کاملا دلخواه در پروژه UserInterface بنویسید.
-
-
-
- </div>
+Testing<br>
+The project includes xUnit tests for the methods of the classes. To run the tests, open the Test classes run the tests.<br><br>
